@@ -6,17 +6,13 @@
 
 <html>
     
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Enhorabuena</title>
-        <link rel="stylesheet" href="<c:url value="/css/estilos.css"/> ">
-        <link rel="shortcut icon" href="">
-        <script src="<c:url value="/js/ejemplo.js" />"></script>
-    </head>
     <body>      
         
         <div id="agrupar">
-            <%@include file="./header.jsp" %>
+            <div style="margin-top: 20px;">
+                <%@include file="./header.jsp" %>
+            </div>
+            
 <!--            <header id="cabecera">
                 <button class="boton_header"> Apachurrame</button>
                 <button class="boton_header"> Apachurrame2</button>

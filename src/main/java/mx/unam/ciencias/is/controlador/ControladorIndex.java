@@ -6,6 +6,7 @@
 package mx.unam.ciencias.is.controlador;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -18,6 +19,7 @@ import org.springframework.web.servlet.ModelAndView;
  */
 @Controller 
 public class ControladorIndex {
+    
     
      /**
       * Metodo que responde a la peticion raiz
@@ -49,6 +51,19 @@ public class ControladorIndex {
         String parametro = request.getParameter("param");
         System.out.println("La peticion3 es: =================>"+parametro);
         model.addAttribute("parametro", parametro);
+        return new ModelAndView("index",model);
+    
+    }
+    
+    @RequestMapping(value="/iniciar_sesion", method = RequestMethod.GET)
+    public ModelAndView iniciar_sesion(HttpServletRequest request,ModelMap model){
+        HttpSession objSesion = request.getSession(true); 
+        String correo = request.getParameter("correo");
+        String contrasena = request.getParameter("contrasena");
+        objSesion.setAttribute("usuario", correo );
+        System.out.println("La peticion3 es: =================>"+correo + " " + contrasena);
+        System.out.println("Y la sesion " + (String)objSesion.getAttribute("usuario"));
+//        model.addAttribute("parametro", parametro);
         return new ModelAndView("index",model);
     
     }
