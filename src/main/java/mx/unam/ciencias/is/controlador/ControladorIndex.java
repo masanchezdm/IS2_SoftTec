@@ -63,7 +63,14 @@ public class ControladorIndex {
         objSesion.setAttribute("usuario", correo );
         System.out.println("La peticion3 es: =================>"+correo + " " + contrasena);
         System.out.println("Y la sesion " + (String)objSesion.getAttribute("usuario"));
-//        model.addAttribute("parametro", parametro);
+        model.addAttribute("sesion", (String)objSesion.getAttribute("usuario"));
+        return new ModelAndView("index",model);
+    
+    }
+    @RequestMapping(value="/cerrar_sesion", method = RequestMethod.GET)
+    public ModelAndView cerrar_sesion(HttpServletRequest request,ModelMap model){
+        HttpSession objSesion = request.getSession(true); 
+        objSesion.removeAttribute("usuario");
         return new ModelAndView("index",model);
     
     }

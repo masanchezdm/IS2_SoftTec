@@ -44,7 +44,7 @@ body{
     top: 0;
     position: fixed;
     box-shadow: 0 4px 2px -2px gray;
-    display: inline-block;
+    display: inline-block !important;
     
 }
 #footer{
@@ -115,4 +115,14 @@ body{
 
 .boton_header:hover{
     background-color:rgba(192,192,192,0.3);
+}
+
+.circulo {
+  height: 100px;
+  width: 100px;
+  text-align: center;
+  font-size:36px;
+  vertical-align: middle;
+  border-radius: 50%;
+  background: #8CC657;
 }

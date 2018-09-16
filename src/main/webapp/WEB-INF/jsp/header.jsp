@@ -21,7 +21,13 @@
         <button class="boton_header"> Apachurrame</button>
         <button class="boton_header"> Apachurrame2</button>
         <button type="button" class="boton_header"> Apachurrame3  </button>
-        <button type="button" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo"class="boton_header" style="border: 1px solid #00D1E0; margin-right: 20px;"> Iniciar </button>
+        <% if (session.getAttribute("usuario") == null) { %>
+            <button type="button" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo"class="boton_header" style="border: 1px solid #00D1E0; margin-right: 20px;"> Iniciar </button>
+        <% } else {%>
+        <form action="/cerrar_sesion" method="GET">
+            <button class="boton_header" style="border: 1px solid #00D1E0; margin-right: 20px; display: inline-block"> ${sesion}</button>
+        </form>
+        <% } %>
     </header>
     
     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
