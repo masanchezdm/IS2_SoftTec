@@ -3,11 +3,11 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>mx.unam.ciencias.is</groupId>
-    <artifactId>Repaso</artifactId>
+    <artifactId>SEC</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>war</packaging>
 
-    <name>Repaso</name>
+    <name>SEC</name>
 
     <properties>
         <endorsed.dir>${project.build.directory}/endorsed</endorsed.dir>

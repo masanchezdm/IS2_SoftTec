@@ -18,15 +18,25 @@
         <script src="<c:url value="/js/ejemplo.js" />"></script>
     </head>
     <header id="cabecera">
-        <button class="boton_header"> Apachurrame</button>
-        <button class="boton_header"> Apachurrame2</button>
-        <button type="button" class="boton_header"> Apachurrame3  </button>
+        <button class="boton_header"> Features</button>
+        <button class="boton_header"> Enterprise</button>
+        <button type="button" class="boton_header"> Support </button>
         <% if (session.getAttribute("usuario") == null) { %>
             <button type="button" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo"class="boton_header" style="border: 1px solid #00D1E0; margin-right: 20px;"> Iniciar </button>
         <% } else {%>
-        <form action="/cerrar_sesion" method="GET">
-            <button class="boton_header" style="border: 1px solid #00D1E0; margin-right: 20px; display: inline-block"> ${sesion}</button>
-        </form>
+        <!--<form action="/cerrar_sesion" method="GET">-->
+            <!--<button class="boton_header" style="border: 1px solid #00D1E0; margin-right: 20px; display: inline-block"> ${sesion}</button>-->
+            <button type="button" class="boton_header" style="border: 1px solid #00D1E0; margin-right: 20px; display:" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                ${sesion}
+            </button>
+            <div class="dropdown-menu" style="margin-top: 15px">
+                <a class="dropdown-item" href="#" >Perfil</a>
+                <div class="dropdown-divider"></div>                
+                <form  id="formid" action="/cerrar_sesion" method="GET">
+                    <a class="dropdown-item" href="#" onclick="document.getElementById('formid').submit()">Cerrar sesion</a>
+                </form>
+              </div>
+        <!--</form>-->
         <% } %>
     </header>
     
