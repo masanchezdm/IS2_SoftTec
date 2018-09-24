@@ -5,6 +5,9 @@
  */
 package mx.unam.ciencias.is.controlador;
 
+import java.util.Enumeration;
+import java.util.HashMap;
+import java.util.Map;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import org.springframework.stereotype.Controller;
@@ -61,8 +64,6 @@ public class ControladorIndex {
         String correo = request.getParameter("correo");
         String contrasena = request.getParameter("contrasena");
         objSesion.setAttribute("usuario", correo );
-        System.out.println("La peticion3 es: =================>"+correo + " " + contrasena);
-        System.out.println("Y la sesion " + (String)objSesion.getAttribute("usuario"));
         model.addAttribute("sesion", (String)objSesion.getAttribute("usuario"));
         return new ModelAndView("index",model);
     
@@ -74,4 +75,29 @@ public class ControladorIndex {
         return new ModelAndView("index",model);
     
     }
+    @RequestMapping(value="/editar_perfil", method = RequestMethod.GET)
+    public ModelAndView editar_perfil(HttpServletRequest request,ModelMap model){
+        HttpSession objSesion = request.getSession(true); 
+        objSesion.removeAttribute("usuario");
+        return new ModelAndView("editar_perfil",model);
+//        return new ModelAndView("editar_admin",model);
+    
+    }
+
+    @RequestMapping(value="/editar/datos", method = RequestMethod.POST)
+    public ModelAndView editar_datos(HttpServletRequest request,ModelMap model){
+        HttpSession objSesion = request.getSession(true); 
+        String usuario = (String)objSesion.getAttribute("usuario");
+        if(objSesion.getAttribute("usuario")== null)
+            return new ModelAndView("index",model);
+        Enumeration enumeration = request.getParameterNames();
+        Map<String, Object> modelMap = new HashMap<>();
+        while(enumeration.hasMoreElements()){
+            String parameterName = (String) enumeration.nextElement();
+            System.out.println(parameterName + " -> "+request.getParameter(parameterName));
+//            modelMap.put(parameterName, request.getParameter(parameterName));
+        }
+        return new ModelAndView("editar_perfil",model);
+    }
+    
 }

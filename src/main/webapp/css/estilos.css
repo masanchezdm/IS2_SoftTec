@@ -99,7 +99,7 @@ body{
     background:#A35A16 ;
 }
 
-.boton_header{
+.btn{
     min-width: 70px;
     height: 40px;
     border-radius: 5px 5px;
@@ -110,15 +110,66 @@ body{
     padding: 5px 7px;
     cursor: pointer;
     background: none;
-    border: none;
     color:#3C3B37;
     font-family:  sans-serif;
 }
 
-.boton_header:hover{
-    background-color:rgba(192,192,192,0.3);
+.btn-sesion{
+    border: 1px solid #4631FF !important;
+    margin-right: 20px;
 }
-.boton_header:focus { 
+.btn-sesion:hover{
+    border: 1px solid #4631FF;
+    background-color: #4631FF;
+    color: white;
+}
+.btn-aceptar{
+    border: 1px solid #148fcc;
+    margin-right: 20px;
+}
+.btn-aceptar:hover{
+    background-color: #148fcc;
+    color: white;
+}
+.btn-registro{
+    border: 1px solid #FF5100 !important;
+}
+.btn-registro:hover{
+    background-color: #FF5100;
+    color: white;
+}
+.btn-tipo-usu{
+    width: 300px;
+    margin-right: 20px;
+    margin-bottom: 50px;
+    border: 1px solid #bfb1ff;
+}
+.btn-tipo-usu:hover{
+    background-color: #bfb1ff;
+    color: white;
+}
+
+.btn-materia{
+    min-width: 130px;
+    min-height: 50px;
+}
+.btn-materia:hover{
+    background-color: #0095c9;
+    color: white;
+}
+
+.btn-nivel{
+    min-width: 130px;
+    min-height: 50px;
+}
+.btn-nivel:hover{
+    background-color: #48bcc1;
+    color: white;
+}
+
+
+
+.btn:focus { 
     outline: none !important;
 }
 
@@ -134,4 +185,49 @@ body{
   vertical-align: middle;
   border-radius: 50%;
   background: #8CC657;
+}
+
+.div_registro input{
+    border: 1px solid #DADBDC;
+    border-radius: 10px 10px;
+    margin-left: 20px;
+    padding-left: 20px;
+    width: 270px;
+    height: 35px;
+}
+.div_registro div{
+    display: inline-block;
+    margin: 7px 30px;
+}
+
+.div_registro label{
+    width: 75px;
+}
+
+::placeholder {
+    color: grey;
+    opacity: .2; /* Firefox */
+}
+
+.datos{
+    padding: 15px 15px;
+    
+}
+.datos:hover{
+    background-color: #e3fff8;
+}
+
+.eliminar{
+    width: 20px !important;
+    height: 18px;
+    text-align: center;
+    background-color: #ff0033;
+    font-size: 16px;
+    margin-top: 15px;    
+    margin-left: 20px;
+    padding: 5px 10px;
+    cursor: pointer;
+    border: none;
+    font-family:  sans-serif;
+    border-radius: 50%;
 }
